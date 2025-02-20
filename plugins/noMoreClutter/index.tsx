@@ -12,8 +12,7 @@ const cssTexts = {
 
     // Off by default
     "noPronouns": `div[aria-label="Pronouns"] * { display: none !important; } div[class^=dotSpacer] { display: none !important; }`,
-    "noNitroButton": `a[href="/store"] * { display: none !important; }`,
-    "noQuests": `section[aria-label="User area"] { display: none !important; }`
+    "noNitroButton": `a[href="/store"] * { display: none !important; }`
 }
 
 const settings = definePluginSettings({
@@ -45,10 +44,6 @@ const settings = definePluginSettings({
         default: false
     },
     noNitroButton: {
-        type: OptionType.BOOLEAN,
-        default: false
-    },
-    noQuests : {
         type: OptionType.BOOLEAN,
         default: false
     }
