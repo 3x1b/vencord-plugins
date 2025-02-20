@@ -3,13 +3,21 @@ import { definePluginSettings } from "@api/Settings";
 import definePlugin from "@utils/types";
 
 const cssTexts = {
+    // On by default
     "noGiftButton": `button[aria-label="Send a gift"] * { display: none !important; }`,
     "noShopButton": `a[href="/shop"] * { display: none !important; }`,
     "noProfileDecorations": `svg[class^="avatarDecoration"] { display: none !important; }`,
-    "noPlayAgainTab": `ul[aria-label="Direct Messages"] div[class^="container"] { display: none !important; }`
+    "noPlayAgainTab": `ul[aria-label="Direct Messages"] div[class^="container"] { display: none !important; }`,
+    "noBadges": `div[aria-label="User Badges"] * { display: none !important; }`,
+
+    // Off by default
+    "noPronouns": `div[aria-label="Pronouns"] * { display: none !important; } div[class^=dotSpacer] { display: none !important; }`,
+    "noNitroButton": `a[href="/store"] * { display: none !important; }`,
+    "noQuests": `section[aria-label="User area"] { display: none !important; }`
 }
 
 const settings = definePluginSettings({
+    // On by default
     noGiftButton: {
         type: OptionType.BOOLEAN,
         default: true
@@ -25,6 +33,24 @@ const settings = definePluginSettings({
     noPlayAgainTab: {
         type: OptionType.BOOLEAN,
         default: true
+    },
+    noBadges: {
+        type: OptionType.BOOLEAN,
+        default: true
+    },
+
+    // Off by default
+    noPronouns: {
+        type: OptionType.BOOLEAN,
+        default: false
+    },
+    noNitroButton: {
+        type: OptionType.BOOLEAN,
+        default: false
+    },
+    noQuests : {
+        type: OptionType.BOOLEAN,
+        default: false
     }
 });
 
